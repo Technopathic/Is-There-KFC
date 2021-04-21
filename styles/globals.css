@@ -1,9 +1,68 @@
+@font-face {
+  font-family: "inter";
+  src: url(../public/Inter-SemiBold.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@keyframes fadeDown {
+   0% {
+    transform: translate3d(0, -40px, 0);
+    opacity:0;
+    color: rgba(255, 255, 255, 0.5);	
+  }
+  25% {
+    color: rgba(255, 255, 255, 0.5);	
+  }
+  50% {
+    transform: translate3d(0, 0, 0);
+  }
+  75% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    color: rgba(255, 255, 255, 1);	
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    color: rgba(255, 255, 255, 1);	
+  }
+}
+
+@keyframes fadeUp {
+   0% {
+    transform: translate3d(0, 40px, 0);
+    opacity:0;
+    color: rgba(255, 255, 255, 0.5);	
+  }
+  25% {
+    color: rgba(255, 255, 255, 0.5);	
+  }
+  50% {
+    transform: translate3d(0, 0, 0);
+  }
+  75% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    color: rgba(255, 255, 255, 1);	
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    color: rgba(255, 255, 255, 1);	
+  }
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: "inter",-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  text-rendering: optimizelegibility;
+  font-display: swap;
+  background-color: #a3080c;
 }
 
 a {
@@ -13,4 +72,96 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content:space-between;
+  width: 100%;
+  max-width: 1024px;
+  padding: 16px 0;
+}
+
+.languages > span {
+  padding: 8px 16px;
+  cursor: pointer;
+  margin: 0px 4px;
+  color: #FFFFFF;
+  border-radius:4px;
+  transition: all 200ms linear;
+}
+
+.languages > span:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.active {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+main {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1024px;
+}
+
+.question {
+  font-size:4.8rem;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  opacity:0;
+  animation: fadeDown 1.5s forwards;
+  animation-delay: 0.1s;
+  text-align: center;
+}
+
+.answer {
+  font-size: 6.8rem;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  opacity:0;
+  animation: fadeUp 1.5s forwards;
+  animation-delay: 0.1s;
+  text-align: center;
+}
+
+
+footer {
+  color: #FFFFFF;
+  padding:16px 0px;
+}
+
+.social {
+  text-decoration:underline;
+}
+
+@media(max-width:425px) {
+  .question {
+    font-size:3rem;
+  }
+
+  .answer {
+    font-size:4rem;
+  }
+}
+
+@media(max-width:375px) {
+  .question {
+    font-size:2.2rem;
+  }
+
+  .answer {
+    font-size:3rem;
+  }
 }
