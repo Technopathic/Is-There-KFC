@@ -18,4 +18,4 @@ const env = {
     "TWITTER": "https://twitter.com/NowNanoTV"
 }
 
-module.exports = env
+module.exports = { env }
