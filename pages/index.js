@@ -14,7 +14,7 @@ const Home = () => {
       </header>
       <main>
         <div className="question">{language === "fi" ? "kfc suomessa?" : "Is there KFC in Finland?"}</div>
-        <div className="answer">{language === "fi" ? "ei (vielä)" : "Not Yet"}</div>
+        <div className="answer">{language === "fi" ? "ei (vielä)" : "No"}</div>
       </main>
       <footer>Made with 🍗 by <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/NowNanoTV" className="social">NowNano</a></footer>
     </div>
